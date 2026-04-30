@@ -31,4 +31,20 @@ utilities.hash = (str) => {
   }
 };
 
+// create a string of random alphanumeric characters of a given length
+utilities.createRandomString = (strLength) => {
+  strLength = typeof strLength === 'number' && strLength > 0 ? strLength : false;
+  if (strLength) {
+    const possibleCharacters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let str = '';
+    for (let i = 0; i < strLength; i++) {
+      const randomIndex = Math.floor(Math.random() * possibleCharacters.length);
+      str += possibleCharacters[randomIndex];
+    }
+    return str;
+  } else {
+    return false;
+  }
+};
+
 module.exports = utilities;
