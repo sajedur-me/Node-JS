@@ -165,5 +165,18 @@ handler._tokens.delete = (requestProperties, callback) => {
     }
 }
 
+handler._tokens.verifyToken = (token, phone, callback) => {
+    data.read('tokens', token, (err, tokenData) => {
+        if (!err && tokenData) {
+            if (tokenData.phone === phone && tokenData.expires > Date.now()) {
+                callback(true);
+            } else {
+                callback(false);
+            }
+        } else {
+            callback(false);
+        }
+    });
+}
 
 module.exports = handler;
