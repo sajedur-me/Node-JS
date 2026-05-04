@@ -133,7 +133,7 @@ handler._tokens.put = (requestProperties, callback) => {
             message: 'Missing required fields or fields are invalid',
         });
     }
-}
+};
 
 handler._tokens.delete = (requestProperties, callback) => {
     const token = typeof requestProperties.queryStringObject.token === 'string' && requestProperties.queryStringObject.token.trim().length === 20 ? requestProperties.queryStringObject.token.trim() : false;
@@ -163,7 +163,7 @@ handler._tokens.delete = (requestProperties, callback) => {
             message: 'Missing required field',
         });
     }
-}
+};
 
 handler._tokens.verifyToken = (token, phone, callback) => {
     data.read('tokens', token, (err, tokenData) => {
@@ -177,6 +177,6 @@ handler._tokens.verifyToken = (token, phone, callback) => {
             callback(false);
         }
     });
-}
+};
 
 module.exports = handler;

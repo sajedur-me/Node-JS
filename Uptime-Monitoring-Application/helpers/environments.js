@@ -13,6 +13,7 @@ environments.staging = {
   port: 3000,
   envName: 'staging',
   secretKey: 'thisIsASecret',
+  maxChecks: 5,
 };
 
 // Production environment
@@ -20,6 +21,7 @@ environments.production = {
   port: 5000,
   envName: 'production',
   secretKey: 'thisIsAlsoASecret',
+  maxChecks: 5,
 };
 
 // Check environment from command line or default to staging

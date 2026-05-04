@@ -158,7 +158,7 @@ handler._users.put = (requestProperties, callback) => {
             message: 'Missing required field',
         });
     }
-}
+};
 
 handler._users.delete = (requestProperties, callback) => {
     const phone = typeof requestProperties.queryStringObject.phone === 'string' && requestProperties.queryStringObject.phone.trim().length === 11 ? requestProperties.queryStringObject.phone.trim() : false;
@@ -198,7 +198,7 @@ handler._users.delete = (requestProperties, callback) => {
             message: 'Missing required field',
         });
     }
-}
+};
 
 
 module.exports = handler;
