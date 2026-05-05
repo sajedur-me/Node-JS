@@ -10,12 +10,18 @@ const http = require('http');
 const {handleReqRes} = require('./helpers/handleReqRes');
 const environment = require('./helpers/environments');
 const data = require('./lib/data');
+// after delete 
+const {sendTwilioSms} = require('./helpers/notifications');
 
 // App object - module scaffolding
 const app = {};
 
-// Testing file system
+// after delete
+sendTwilioSms('01761155579', 'Hello from Uptime Monitoring Application!', (err) => {
+    console.log('Twilio SMS sent successfully:', !err);
+});
 
+// Testing file system
 data.delete('test', 'newFile', (err, data) => {
     console.log(err, data);
 });

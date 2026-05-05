@@ -14,6 +14,10 @@ environments.staging = {
   envName: 'staging',
   secretKey: 'thisIsASecret',
   maxChecks: 5,
+  twilio: {
+    fromPhone: '+15313004724',
+    accountSid: 'ACcf160e14476367d46ca17d1c8c34879b',
+    authToken: '4aa0cf36802d62c3707d5744fbd1ed2f',}
 };
 
 // Production environment
@@ -22,6 +26,10 @@ environments.production = {
   envName: 'production',
   secretKey: 'thisIsAlsoASecret',
   maxChecks: 5,
+  twilio: {
+    fromPhone: '+15313004724',
+    accountSid: 'ACcf160e14476367d46ca17d1c8c34879b',
+    authToken: '4aa0cf36802d62c3707d5744fbd1ed2f',}
 };
 
 // Check environment from command line or default to staging
